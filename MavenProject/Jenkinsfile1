@@ -2,8 +2,8 @@ pipeline{
     agent any
     tools
     {
-        maven "apache-maven-3.3.3"
-        jdk "JDK"
+        maven 'apache-maven-3.3.3'
+        jdk 'JDK'
     }
     stages{
         stage ("build")
@@ -11,7 +11,7 @@ pipeline{
          steps
          {
              echo " build a project."
-             sh "mvn compile"
+             sh 'mvn compile'
          }
         }
         stage ("test")
@@ -19,7 +19,7 @@ pipeline{
           steps
           {
               echo "testing the project"
-              sh "mvn test"
+              sh 'mvn test'
           }
         }
         stage ("install")
@@ -27,7 +27,7 @@ pipeline{
           steps
           {
               echo "installing the plugins"
-              sh "mvn install"
+              sh 'mvn install'
           }
         }
         stage ("clean up")
