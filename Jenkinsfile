@@ -15,5 +15,13 @@ pipeline{
               echo "testing the project"
           }
         }
+        stage ("clean up")
+        {
+          steps
+          {
+              echo "cleaninig up workspace"
+               cleanWs()
+          }
+        }
     }
 }
