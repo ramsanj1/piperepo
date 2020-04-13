@@ -11,24 +11,8 @@ pipeline{
          steps
          {
              echo " build a project."
-             sh 'mvn compile'
+             sh "cd MavenProject ; mvn clean install ; pwd"
          }
-        }
-        stage ("test")
-        {
-          steps
-          {
-              echo "testing the project"
-              sh 'mvn test'
-          }
-        }
-        stage ("install")
-        {
-          steps
-          {
-              echo "installing the plugins"
-              sh 'mvn install'
-          }
         }
         stage ("clean up")
         {
